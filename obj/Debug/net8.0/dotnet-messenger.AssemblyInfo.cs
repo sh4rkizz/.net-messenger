@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("dotnet-messenger")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+39778b9f969842fa4a91b1b1a88cd0fc4e4e700f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5221abbe0f0d06f29cec195d4a8f533ecb99dc88")]
 [assembly: System.Reflection.AssemblyProductAttribute("dotnet-messenger")]
 [assembly: System.Reflection.AssemblyTitleAttribute("dotnet-messenger")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -80,6 +80,12 @@ namespace dotnet_messenger.Controllers
         {
             using ApplicationContext db = new();
 
+            if (string.IsNullOrWhiteSpace(model.To))
+            {
+                ViewData["To-Message"] = "This field is required";
+                return View();
+            }
+
             if (string.IsNullOrWhiteSpace(model.Text))
             {
                 ViewData["Text-Message"] = "This field is required";
@@ -112,7 +118,7 @@ namespace dotnet_messenger.Controllers
 
             if (receiverUser == null)
             {
-                ViewData["To-Message"] = $"User '{model.To}' was no found";
+                ViewData["To-Message"] = $"User '{model.To}' was not found";
                 return View();
             }
 

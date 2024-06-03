@@ -36,7 +36,7 @@ namespace dotnet_messenger.Controllers
 
             if (user == null)
             {
-                ViewData["Login"] = $"Incorrect data. Try again {form.Username} {form.Password}";
+                ViewData["Login"] = $"Incorrect data. Try again";
                 return View();
             }
 
