@@ -1,0 +1,21 @@
+@model FilterModel;
+
+
+<div class="text-center">
+    <form method="get" asp-action="Messenger" asp-controller="Messenger">
+        <div class="form filter">
+            <div class="form-row">
+                <label class="control-label">Filter by read ["new" | "read"]</label>
+                <input id="Status" name="Status" asp-for="Status" />
+            </div>
+
+            <div class="form-row">
+                <label class="control-label">Filter by username</label>
+                <input id="Username" name="Username" asp-for="Username" />
+            </div>
+
+            <div class="form-row">
+                <button type="submit">Filter</button>
+            </div>
+    </form>
+</div>

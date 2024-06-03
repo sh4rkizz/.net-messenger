@@ -1,0 +1,107 @@
+﻿<style>
+    html,
+    body,
+    main {
+        background-color: #222 !important;
+        height: 100%;
+        width: 100%;
+        margin: auto !important;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    h1 {
+        color: #FFF;
+    }
+
+    .form {
+        margin: auto;
+        gap: 20px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .form label {
+        color: #FFF;
+        font-weight: bold;
+        text-align: left;
+    }
+
+    .form-row {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        justify-content: flex-start;
+    }
+
+    .form .form-row > input {
+        color: #fff;
+        padding: 10px;
+        border: 1px solid #fff;
+        border-radius: 10px;
+        width: min(600px, 100%);
+        transition: 0.5s ease;
+        background-color: #555;
+    }
+
+    .form .form-row > input:hover,
+    .form .form-row > input:active,
+    .form .form-row > input:focus {
+        border-color: rgb(255, 0, 102, 0.5);
+    }
+
+    .form span.error-text {
+        color: rgb(255, 0, 102);
+    }
+
+    .page {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    button {
+        padding: 10px 20px;
+        border-color: rgb(255, 0, 102, 0.5);
+        border-radius: 10px !important;
+        background-color: inherit;
+        transition: 0.5s ease;
+        color: #FFF;
+    }
+
+    button:hover, button:focus {
+        background-color: #666;
+    }
+</style>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Мессенджер</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/dotnet_messenger.styles.css" asp-append-version="true" />
+</head>
+
+<body>
+    <main role="main">
+        @RenderBody()
+    </main>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+
+</html>

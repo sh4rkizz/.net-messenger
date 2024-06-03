@@ -1,0 +1,31 @@
+@model SendMessageModel;
+
+
+<div class="text-center">
+    <form method="post" asp-action="Messenger" asp-controller="Messenger">
+        <div class="form message">
+            <div class="form-row">
+                <label class="control-label" for="to">Receiver username:</label>
+                <input id="to" asp-for="To" class="form-control" name="To" />
+                <span class="error-text">@ViewData["To-Message"]</span>
+            </div>
+
+            <div class="form-row">
+                <label class="control-label">Title:</label>
+                <input asp-for="Title" class="form-control" name="Title" />
+                <span class="error-text">@ViewData["Title-Message"]</span>
+            </div>
+
+            <div class="form-row">
+                <label class="control-label">Text:</label>
+                <textarea asp-for="Text" class="form-control" name="Text" placeholder="Введите сообщение..."></textarea>
+                <span class="error-text">@ViewData["Text-Message"]</span>
+            </div>
+
+            <div class="form-row">
+                <button type="submit">Send</button>
+                <span class="error-text">@ViewData["Message"]</span>
+            </div>
+        </div>
+    </form>
+</div>

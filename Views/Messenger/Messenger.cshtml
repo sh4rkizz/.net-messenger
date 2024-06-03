@@ -1,0 +1,46 @@
+@{
+    ViewData["Title"] = "Messenger";
+}
+
+<style>
+    .messenger {
+        gap: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .post-and-filter {
+        gap: 25px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #messages {
+        width: min(1000px, 100%);
+    }
+</style>
+
+<div class="page">
+    <h1 style="text-align: center">Welcome to the messenger!</h1>
+
+    <div class="page messenger">
+        <div class="post-and-filter">
+            <div id="send-message">
+                <partial name="SendMessage.cshtml" />
+            </div>
+
+            <div id="filter-messages">
+                <partial name="FilterMessages.cshtml" />
+            </div>
+        </div>
+    </div>
+
+    <div id="messages">
+        <partial name="Messages.cshtml" />
+    </div>
+</div>
+</div>

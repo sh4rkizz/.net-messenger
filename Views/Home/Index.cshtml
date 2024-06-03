@@ -1,0 +1,28 @@
+@{ ViewData["Title"] = "Welcome page"; }
+
+<style>
+    a {
+        color: #fff;
+        padding: 10px;
+        border: 1px solid #fff;
+        border-radius: 10px;
+        width: min(400px, 100%);
+        transition: 0.5s ease;
+        text-decoration: none;
+    }
+
+    a:hover {
+        border-color: rgb(255, 0, 102, 0.5);
+        color: rgb(255, 0, 102);
+    }
+</style>
+
+
+<div class="text-center">
+    <div class="form">
+        <h1>Welcome back :/</h1>
+
+        <a href="@Url.Action("Login", "Login")">Войти в&nbsp;аккаунт</a>
+        <a href="@Url.Action("Registration", "Registration")">Создать профиль</a>
+    </div>
+</div>

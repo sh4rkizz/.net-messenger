@@ -1,0 +1,34 @@
+@model LoginModel;
+@{ ViewData["Title"] = "Login page"; }
+
+<style>
+    h1 {
+        margin-bottom: 20px;
+    }
+</style>
+
+
+<div class="text-center">
+    <h1>Login</h1>
+
+    <form method="post" asp-action="Login" asp-controller="Login">
+        <div class="form login">
+            <div class="form-row">
+                <label class="control-label">Username:</label>
+                <input asp-for="Username" class="form-control" name="Username" />
+                <span class="error-text">@ViewData["Username"]</span>
+            </div>
+
+            <div class="form-row">
+                <label class="control-label">Password:</label>
+                <input asp-for="Password" class="form-control" type="password" name="Password" />
+                <span class="error-text">@ViewData["Password"]</span>
+            </div>
+
+            <div class="form-row">
+                <button type="submit">Log in</button>
+                <span class="error-text">@ViewData["Login"]</span>
+            </div>
+        </div>
+    </form>
+</div>

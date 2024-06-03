@@ -1,0 +1,76 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+@{
+    var messages = ViewData["Messages"] as MessageModel[];
+}
+
+
+<div class="alert alert-success">
+    <div class="text-center">
+        <table class="table">
+            <tr>
+                <th>Тема</th>
+                <th>Дата</th>
+                <th>От</th>
+                <th>Кому</th>
+            </tr>
+            @if (messages != null)
+            {
+                @foreach (var item in messages)
+                {
+                    <tr class="@(item.Status ? "read" : "new")">
+                        <td>
+                            <span class="messageId" data-id="@item.Id" onClick="alert('@item.Text')">
+                                @item.Title
+                            </span>
+                        </td>
+
+                        <td>
+                            <span>@item.Date</span>
+                        </td>
+
+                        <td>
+                            <span>@item.From</span>
+                        </td>
+
+                        <td>
+                            <span>@item.To</span>
+                        </td>
+                    </tr>
+                }
+            }
+        </table>
+    </div>
+</div>
+
+
+<script>
+    $(document).ready(function () {
+        const newMessages = document.querySelectorAll(".new") || [];
+        const readMessages = document.querySelectorAll(".read") || [];
+
+        if (newMessages && newMessages.length) {
+            for (const message of newMessages) {
+                message.style.background = 'yellow';
+            }
+        }
+
+        if (readMessages && readMessages.length) {
+            for (const message of readMessages) {
+                message.style.background = 'green';
+            }
+        }
+
+        $('table span.messageId').click(function (e) {
+            e.preventDefault();
+            var messageId = $(this).attr('data-id');
+            const readUrl = `/Messenger/MarkAsRead/${messageId}/`;
+
+            $.post(readUrl, function () {
+                $(this).closest('tr')
+                    .removeClass('new')
+                    .addClass('read')
+                    .css('background-color', 'green');
+            }.bind(this));
+        });
+    });
+</script>
